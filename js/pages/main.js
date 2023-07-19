@@ -64,7 +64,7 @@ export function generateMain(user) {
     }
 
     let styleFile = document.head.getElementsByTagName('link')[0]
-    styleFile.href = "./css/main.css"
+    styleFile.href = "../css/main.css"
 
     const xps = user.transactions.filter(element => element.type === "xp" && !element.path.includes("piscine") && !element.path.includes("rust"));
     const sum = convertBytesToSize(xps.reduce((total, element) => total + element.amount, 0));

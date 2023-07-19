@@ -16,7 +16,6 @@ body {
     font-family: var(--main-text);
     color: var(--color-text);
     text-transform: uppercase;
-    /* background-color: var(--color-background); */
 }
 
 p {

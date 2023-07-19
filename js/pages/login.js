@@ -10,12 +10,12 @@ export function generateLogin() {
         document.body.removeChild(document.body.firstChild)
     }
 
-    // let styleFile = document.head.getElementsByTagName('link')[0]
-    // styleFile.href = "./css/login.css"
-
+    let bodyContiner = document.createElement('div')
+    bodyContiner.setAttribute('id', 'body-container')
     let container = document.createElement('div')
     container.className = 'container'
-    document.body.append(container)
+    bodyContiner.append(container)
+    document.body.append(bodyContiner)
 
     let title = document.createElement('h2');
     title.innerHTML = 'Login'

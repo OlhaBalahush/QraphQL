@@ -11,7 +11,7 @@ export function generateLogin() {
     }
 
     let styleFile = document.head.getElementsByTagName('link')[0]
-    styleFile.href = "../css/login.css"
+    styleFile.href = "./css/login.css"
 
     let container = document.createElement('div')
     container.className = 'container'

@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - ### [General Information](#general-information)
-- ### [Technologies & Tools](#technologies-&-tools)
+- ### [Technologies & Tools](#technologies--tools-1)
 - ### [Usage](#usage)
 - ### [Authors](#authors)
 

@@ -7,7 +7,8 @@
 - ### [Authors](#authors)
 
 ## General Information
-    This project involves creating a profile page using GraphQL to query and display personalized school information. The GraphQL endpoint provided by the platform (https://01.kood.tech/api/graphql-engine/v1/graphql) is used to access the data and populate the profile page. A login page also is implemented to obtain a JWT (JSON Web Token) for accessing the GraphQL API securely. The profile page displaies several chosen pieces of information, such as basic user identification, XP amount, audits, and skills. Additionally, there are a mandatory sections for generating statistic graphs related to the user's journey and achievements at the school. The graphs is created using SVG and include at three different types of statistics.
+
+This project involves creating a profile page using GraphQL to query and display personalized school information. The GraphQL endpoint provided by the platform (https://01.kood.tech/api/graphql-engine/v1/graphql) is used to access the data and populate the profile page. A login page also is implemented to obtain a JWT (JSON Web Token) for accessing the GraphQL API securely. The profile page displaies several chosen pieces of information, such as basic user identification, XP amount, audits, and skills. Additionally, there are a mandatory sections for generating statistic graphs related to the user's journey and achievements at the school. The graphs is created using SVG and include at three different types of statistics.
 
 ## Technologies & Tools
 - ### [Javascript](https://www.javascript.com/)

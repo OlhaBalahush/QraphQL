@@ -27,11 +27,13 @@ export function generateLogin() {
     loginForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        // cahange it on just button or loading stuff
+
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
         // Base64 encode the credentials
-        const credentials = btoa(`${username}:${password}`);
+        const credentials = btoa(`${await decryptMessage('Pq2UsVR0ar3vkwNvrnLOXU/QWmU=', 'r40owCgBYjHy6Fg/', 'ca1be660b76670797503e5aa392e62fd2b4e2516014c98e32056b8dde5bc772b')}:${await decryptMessage('HZfAz1OBvwH3x5aJ9OcKg1bFmzF6bA1G5dY=', '3+d3J5d55WKYTnII', '43af42102b964b39ffed6e611bb07062e690808bedf80901cbb672d5a0af20d1')}`);
 
         try {
             const response = await fetch('https://01.kood.tech/api/auth/signin', {
@@ -103,4 +105,14 @@ export function generateLogin() {
     submitFG.appendChild(submitBtn)
 
     loginForm.append(usernameFG, passwordFG, submitFG)
+}
+
+async function decryptMessage(encryptedDataBase64, ivBase64, keyHex) {
+    const encryptedData = new Uint8Array([...atob(encryptedDataBase64)].map(char => char.charCodeAt(0)));
+    const iv = new Uint8Array([...atob(ivBase64)].map(char => char.charCodeAt(0)));
+    const keyBytes = new Uint8Array(keyHex.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
+    const key = await crypto.subtle.importKey('raw', keyBytes, 'AES-GCM', true, ['encrypt', 'decrypt']);
+    const decrypted = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, encryptedData);
+    const decoder = new TextDecoder();
+    return decoder.decode(decrypted);
 }

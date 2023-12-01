@@ -29,6 +29,8 @@ export function generateLogin() {
 
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
+
+        const credentials = btoa(`${username}:${password}`);
         try {
             const response = await fetch('https://01.kood.tech/api/auth/signin', {
                 method: 'POST',
